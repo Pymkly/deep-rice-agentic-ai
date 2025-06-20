@@ -16,10 +16,10 @@ class MeteoAgent(GeminiAgent):
 		)
 		self.open_meteo = OpenMeteo()
 		self.tools = [
-			self.open_meteo.get_temperature,
-			self.open_meteo.get_rain,
-			self.open_meteo.get_soil_info,
-			self.open_meteo.get_visibility,
+			['temperature_2m', 'apparent_temperature'],
+			['rain', 'precipitation_probability'],
+			['soil_temperature_0cm', 'soil_moisture_1_to_3cm'],
+			['cloud_cover', 'visibility'],
 		]
 
 	def ask_actions(self, prompt):
@@ -32,8 +32,13 @@ class MeteoAgent(GeminiAgent):
 
 	def get_meteo(self, prompt, longitude, latitude):
 		actions = self.ask_actions(prompt)
-		infos = [self.tools[action](longitude, latitude) for action in actions ]
-		return "\n".join(infos)
+		params = ['date']
+		for index in actions:
+			for param in self.tools[index]:
+				params.append(param)
+		infos = self.open_meteo.extract_info(longitude, latitude, params)
+		# print(infos)
+		return infos
 
 	def answer(self, prompt, longitude, latitude):
 		date = datetime.now()

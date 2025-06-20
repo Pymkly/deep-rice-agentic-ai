@@ -26,6 +26,7 @@ class OrchestratorAgent(GeminiAgent):
     def gather_response(self, prompt, responses):
         df = pd.DataFrame(responses)
         agent_responses = df.to_markdown(index=False)
+        print(agent_responses)
         params = {
             "user_input": prompt,
             "agent_responses" : agent_responses

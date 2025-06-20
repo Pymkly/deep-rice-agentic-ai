@@ -2,7 +2,7 @@
 from api.agent.orchestration.orchestrator_agent import OrchestratorAgent
 
 agent = OrchestratorAgent()
-response = agent.answer("Bonjour, a quel heur la pluie va tomber aujourd'hui?")
+response = agent.answer("Bonjour. A quel heur la pluie va tomber et a quel heur la temperature atteindra son maximum demain?")
 print(response)
 # meteo_agent = MeteoAgent()
 # prompt = "a quel heur la pluie va tomber et a quel heur la temperature atteindra son maximum aujourd hui"
