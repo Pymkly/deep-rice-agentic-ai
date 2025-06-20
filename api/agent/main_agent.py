@@ -13,7 +13,8 @@ def get_instruction(_file_path):
 
 
 class MainAgent :
-    def __init__(self, file_path, llm):
+    def __init__(self, tag, file_path, llm):
+        self.tag = tag
         self.file_path = file_path
         self.llm = llm
 

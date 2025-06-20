@@ -7,10 +7,6 @@
  + get_rain + 1 + récupère la prédiction de pluie meteo (appel de l api open meteo) sur plusieurs jours
  + get_soil_info + 2 + récupère les informations sur le sol tels que la temperature et les moisisures du sol selon la meteo (appel de l api open meteo)  sur plusieurs jours
  + get_visibility + 3 + récupère la prédiction de temperature, temperature apparent sur plusieurs jours
-- Voici la question de l'utilisateur :
-```
-{user_input}
-```
 
 ## Tâches :
 - Tu dois deviner les questions à appeler pour pouvoir répondre à la question de l'utilisateur

@@ -11,7 +11,8 @@ load_dotenv()
 class MeteoAgent(GeminiAgent):
 	def __init__(self):
 		super().__init__(
-			file_path=os.getenv("METEO_PROMPT")
+			file_path=os.getenv("METEO_PROMPT"),
+			tag="meteo"
 		)
 		self.open_meteo = OpenMeteo()
 		self.tools = [
