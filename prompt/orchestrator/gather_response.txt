@@ -4,6 +4,8 @@
 + nom de l'agent + value + description
 + salutation + 0 + un agent qui répond aux questions courants comme les salutations ou remerciements et tout.
 + meteo + 1 + un agent qui est spécialisé dans la meteo. Il a accès à l'api d'Open Meteo. Toutes les questions qui concernent la meteo doivent être posé à lui. Les informations sur la date, l'emplacement sont tres utiles pour lui si l'utilisateur mentionne un de ces informations.
++ image + 2 + Cet agent est spécialisé dans l'analyse et la comparaison d'images. Il peut identifier et fournir un contexte détaillé sur des images similaires à celles fournies par l'utilisateur. En se basant sur une mesure de distance vectorielle (où une valeur proche de 0 indique une forte similitude), il peut évaluer la ressemblance entre les images de l'utilisateur et une base de données d'images connues. Il est capable de commenter chaque image de l'utilisateur en fonction des similitudes trouvées et d'indiquer si un avis d'expert est recommandé en cas de doute.
++ document + 3 + Cet agent est un spécialiste de l'agriculture. Il répond aux questions en utilisant des documents pertinents extraits d'une base de données et ses connaissances personnelles. Il priorise les informations issues des documents en cas de contradiction et fournit systématiquement les sources utilisées. Cet agent ne traite que les requêtes directement liées au domaine de l'agriculture.
 - Voici la question de l'utilisateur :
 ```
 {user_input}

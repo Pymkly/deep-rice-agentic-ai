@@ -11,6 +11,9 @@ def get_instruction(_file_path):
         print(f"Une erreur s'est produite lors de la lecture du fichier '{_file_path}': {e}")
     return contenu
 
+def vector_to_str(vector):
+    return "[" + ",".join(map(str, vector)) + "]"
+
 
 class MainAgent :
     def __init__(self, tag, file_path, llm):
